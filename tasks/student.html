@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+    <body>
+    <script>
+       const student = {
+                description: function() {
+                    return "Info: ID: " + student.id + ", Email: " + student.email_id + ", DOB: " + student.DOB + ", Intake: " + student.intake;
+                },
+        };
+        function show_student_info(){
+            document.getElementById("demo_div").innerHTML = student.description();
+
+                
+        }
+
+        function insert(){
+            let id= document.getElementById("id").value;
+            let email_id=document.getElementById("email_id").value;
+            let DOB=document.getElementById("DOB").value;
+            let intake = document.getElementById("intake").value;
+                student.id=id;
+                student.email_id = email_id;
+                student.DOB = DOB;
+                student.intake = intake;
+        }
+       
+
+
+            </script>
+            
+            <div>
+                <input id="id" placeholder="Enter Student id"/>
+                <input id="email_id" placeholder="Enter Email id"/>
+                <input id="DOB" placeholder="Enter DOB"/>
+                <input id="intake" placeholder="Enter Intake"/>
+                <button onclick="insert();">Insert Info</button>
+                <button onclick="show_student_info();">Show Info</button>
+            </div>
+            <div id="demo_div"></div>
+        </body>
+        </html>
+</html>

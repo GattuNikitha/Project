@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+    <script>
+const student={
+        id: "S00450121",
+        email_id: "ngattu1@aum.edu",
+        DOB: "02-26-2001",
+        intake: "Spring 2024",
+        description: function(){
+            return "The student bearing student id is "+ this. id + " and the email is "+ this.email_id + " The personal information of student's intake   "+ this.intake + " The DOB of the student "+ this.DOB + "";
+        }
+    };
+function show_student_info(){
+    document.getElementById("demo_div").innerHTML = student.description();
+}
+    </script>
+    <body>
+    <button onclick = "show_student_info();">Click here for the Student info</button>
+    <div id="demo_div"></div>
+</body>
+</html>

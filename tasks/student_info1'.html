@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+    <body>
+    <script>
+        const student = {
+            description: function() {
+                return "Info: ID: " + this.id + ", Email: " + this.email_id + ", DOB: " + this.DOB + ", Intake: " + this.intake;
+            },
+        };
+
+        
+        function show_student_info(){
+            let studentsinfo = "";  
+            for (let i = 0; i < students.length; i++) {
+                studentsinfo += students[i].description() + "<br>";  
+            }
+            document.getElementById("demo_div").innerHTML = studentsinfo; 
+        }
+
+        let students = [];  
+
+        function insert(){
+            let id_value = document.getElementById("id").value;
+            let email_id_value = document.getElementById("email_id").value;
+            let DOB_value = document.getElementById("DOB").value;
+            let intake_value = document.getElementById("intake").value;
+
+            let new_student = Object.create(student); 
+            new_student.id = id_value;
+            new_student.email_id = email_id_value;
+            new_student.DOB = DOB_value;
+            new_student.intake = intake_value;
+
+            students.push(new_student);  
+        }
+    </script>
+
+    <div>
+        <input id="id" placeholder="Enter Student id"/>
+        <input id="email_id" placeholder="Enter Email id"/>
+        <input id="DOB" placeholder="Enter DOB"/>
+        <input id="intake" placeholder="Enter Intake"/>
+        <br>
+        <button onclick="insert();">Insert Info</button> 
+        <br>
+        <button onclick="show_student_info();">Show Info</button>
+    </div>
+    <div id="demo_div"></div>
+</body>
+</html>

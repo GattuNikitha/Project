@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            let taskStack = [];
+
+            function addTask() {
+                var taskName = document.getElementById("task_input").value;
+                if (taskName !== "") {
+                    taskStack.push(taskName);
+                    document.getElementById("task_input").value = "";
+                    displayTasks();
+                }
+            }
+
+            function undoTask() {
+                if (taskStack.length > 0) {
+                    taskStack.pop();
+                    displayTasks();
+                } else {
+                    alert("No tasks to undo!");
+                }
+            }
+
+            function displayTasks() {
+                document.getElementById("task_pipeline").textContent = " " + taskStack.join(", ");
+            }
+        </script>
+    </head>
+    <body>
+        
+
+        <input type="text" id="task_input" placeholder="Enter Task Name" />
+
+        <button onclick="addTask()">Add Task</button>
+
+        <button onclick="undoTask()">Undo Task</button>
+
+        <h4>Process Line</h4>
+        <p id="task_pipeline"> </p>
+
+    </body>
+</html>

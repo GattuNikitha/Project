@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+  <body>
+    <input id="user_input" placeholder="Enter size" onkeyup="generate_shape();"/>
+    <div id="content_div"></div>
+    
+    <script>
+        function generate_shape() {
+            let n = parseInt(document.getElementById("user_input").value);
+            let text = "";
+            for (let i = 0; i <= n; i++) {
+                for (let j = 0; j < i; j++) {
+                    text += "* ";
+                }
+                text += "<br>";  
+            }
+            document.getElementById("content_div").innerHTML = text;
+        }
+    </script>
+  </body>
+</html>
